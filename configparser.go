@@ -421,10 +421,8 @@ func parseOption(option string) (opt, value string) {
 		return
 	}
 
-	if i := strings.Index(option, "="); i != -1 {
-		opt, value = split(i, "=")
-	} else if i := strings.Index(option, ":"); i != -1 {
-		opt, value = split(i, ":")
+	if i := strings.Index(option, Delimiter); i != -1 {
+		opt, value = split(i, Delimiter)
 	} else {
 		opt = option
 	}
